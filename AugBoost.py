@@ -36,7 +36,7 @@ class AugBoostBase(BaseGradientBoosting):
                  min_samples_split, min_samples_leaf, min_weight_fraction_leaf,
                  max_depth, min_impurity_decrease, min_impurity_split,
                  init, subsample, max_features,
-                 random_state, n_features_per_subset, max_epochs, is_classification,
+                 random_state, n_features_per_subset, max_epochs, is_classification, alpha=0.9,
                  experiment_name='', augmentation_method='nn', trees_between_feature_update=10,
                  save_mid_experiment_accuracy_results=False, warm_start=False, presort='auto',
                  validation_fraction=0.1, n_iter_no_change=None, tol=1e-4, max_leaf_nodes=None,):
@@ -56,7 +56,7 @@ class AugBoostBase(BaseGradientBoosting):
         self.n_iter_no_change = n_iter_no_change
         self.warm_start = warm_start
         self.tol = tol
-        self.alpha = 0.9
+        self.alpha = alpha
         self.max_epochs = max_epochs
         self.max_leaf_nodes = max_leaf_nodes
         self._SUPPORTED_LOSS = ('deviance', 'exponential', 'ls', 'lad', 'huber', 'quantile')
