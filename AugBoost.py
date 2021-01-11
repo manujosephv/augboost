@@ -1065,7 +1065,7 @@ class AugBoostRegressor(AugBoostBase):
                  experiment_name='AugBoost_experiment',
                  save_mid_experiment_accuracy_results=False, tol=1e-4):
 
-        params = {loss: loss, learning_rate: learning_rate, n_estimators: n_estimators,
+        params = dict(loss: loss, learning_rate: learning_rate, n_estimators: n_estimators,
                   criterion: criterion, min_samples_split: min_samples_split,
                   min_samples_leaf: min_samples_leaf,
                   min_weight_fraction_leaf: min_weight_fraction_leaf,
@@ -1085,7 +1085,7 @@ class AugBoostRegressor(AugBoostBase):
                   n_iter_no_change: n_iter_no_change,
                   experiment_name: experiment_name,
                   save_mid_experiment_accuracy_results: save_mid_experiment_accuracy_results, tol: tol,
-                  "is_classification": False}
+                  is_classification: False)
 
         super(AugBoostRegressor, self).__init__(**params)
 
