@@ -1085,7 +1085,7 @@ class AugBoostRegressor(AugBoostBase):
                   n_iter_no_change: n_iter_no_change,
                   experiment_name: experiment_name,
                   save_mid_experiment_accuracy_results: save_mid_experiment_accuracy_results, tol: tol,
-                  is_classification: False}
+                  "is_classification": False}
 
         super(AugBoostRegressor, self).__init__(**params)
 
